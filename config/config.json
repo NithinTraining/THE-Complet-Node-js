@@ -2,9 +2,9 @@
 
 {
   "local": {
-  "USER": "jazz",
-  "PASSWORD": "Password@123",
-  "DB": "demo",
+  "USER": "root",
+  "PASSWORD": "password123",
+  "DB": "Mydb",
   "HOST": "localhost",
   "dialect": "mysql",
   "pool": {
@@ -17,8 +17,8 @@
     "host": "smtp.gmail.com",
     "secure":true,
     "auth":{
-      "user":"jazap123@gmail.com",
-      "pass": "1111111"
+      "user":"nithinpj333@gmail.com",
+      "pass": "*******"
     },
     "transport": "nodemailer.createTransport(smtpConfig)"
   }
