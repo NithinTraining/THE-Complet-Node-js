@@ -190,9 +190,9 @@ module.exports = {
 
       //create email
       const message = {
-        from: "jazap123@gmail.com",
+        from: "nithinpj333@gmail.com",
         to: req.body.email,
-        replyTo: "jazap123@gmail.com",
+        replyTo: "nithinpj333@gmail.com",
         subject: "FORGOT_PASS_SUBJECT_LINE",
         html: html,
       };
