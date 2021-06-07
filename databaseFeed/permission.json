@@ -1,0 +1,34 @@
+[
+    {
+        
+        "permissions":[ {
+            "name":"LIST_USER",
+            "label":"All Users"
+        },
+        {
+            "name":"EDIT_USER",
+            "label":"Update User"
+        },
+        {
+            "name":"DELETE_USER",
+            "label":"Remove User"
+        },
+        {
+            "name":"VIEW_USER",
+            "label":"View Profile"
+        },
+        {
+            "name":"ROLE_MANAGEMENT",
+            "label":"manage roles"
+        },
+        {
+            "name":"UPLOAD_FILE",
+            "label":"File Upload"
+        },
+        {
+            "name":"VIEW_FILES",
+            "label":"File view"
+        }
+        ]
+    }
+]

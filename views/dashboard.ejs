@@ -1,0 +1,88 @@
+<h1>All Users</h1>
+<table width="500px" id="user-table">
+    <thead>
+        <tr>
+            <th>User id </th>
+            <th>Name </th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i<(usersList).length; i++) {%>
+            <tr>
+              <td>
+                <%= (usersList)[i].user_id%>
+              </td>
+              <td>
+                <%= (usersList)[i].name%>
+              </td>
+              <td>
+                <%= (usersList)[i].email%>
+              </td>
+
+            </tr>
+         <% } %>
+    </tbody>
+    
+</table>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<script>
+    $(document).ready(function () {
+        $('#user-table').DataTable();
+        
+        const token = localStorage.getItem('token')
+        // $.ajax({
+        //     url: '/all-users',
+        //     method: 'get',
+        //     headers: {
+        //         'auth-token': token
+        //     },
+        //     success: (response) => {
+        //         console.log(response);
+        //         if (response.success) {
+        //             if (response.data.length) {
+        //                 var d = (response.data);
+                       
+        //                 var output;
+        //                 $.each(d, function (i, e) {
+        //                     i++
+                           
+        //                     output += '<tr><td>' + i + '</td><td>' + e.name + '</td><td>' + e.email + '</td></tr>';
+        //                 });
+                        
+        //                 $('#user-table').append(output);
+
+        //             }
+        //         } else {
+        //             alert(response.message)
+        //         }
+        //     }
+        // })
+        
+        
+    });
+
+</script>
+
+
+<!-- <table id="demo" class="display" style="width: 100%;">
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Jaz</td>
+        <td>Jaz</td>
+        <td>12165</td>
+    </tr>
+</tbody>
+</table> -->
+
+<script>
+    
+
+</script>

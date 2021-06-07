@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Password</title>
+    <style>
+        body {
+            background: #efefef;
+        }
+
+        .wrapper {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        .form-signin {
+            max-width: 380px;
+            padding: 15px 35px 45px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-left: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 3rem 5rem -2rem rgba(0, 0, 0, 0.2);
+        }
+
+        .form-control {
+            font-size: 16px;
+            padding: 10px;
+            box-sizing: border-box;
+            height: auto;
+            border-radius: 1px;
+        }
+
+        /* enable absolute positioning */
+        .inner-addon {
+            position: relative;
+        }
+
+        /* style icon */
+        .inner-addon .glyphicon {
+            position: absolute;
+            top: 26px;
+            padding: 14px 30px 14px 20px;
+            background-color: rgba(0, 0, 0, 0.05);
+            pointer-events: none;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* align icon */
+        .left-addon .glyphicon {
+            left: 0px;
+        }
+
+        /* add padding  */
+        .left-addon input {
+            padding-left: 65px;
+        }
+
+        .form-signin input {
+            margin-bottom: 15px;
+            height: 44px;
+        }
+
+        .form-signin .forgot-password {
+            display: block;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin-top: -8px;
+            margin-bottom: 30px;
+            font-size: 12px;
+        }
+
+        .account-signup {
+            max-width: 380px;
+            padding: 15px 35px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form class="form-signin" action="#" onsubmit="clickHandler(event)">
+            <h2 class="form-signin-heading">Set New Password</h2>
+            <div class="inner-addon left-addon">
+                <label class="control-label">Password</label>
+                <i class="glyphicon glyphicon-lock"></i>
+                <input type="password" class="form-control" id="password" name="password" placeholder="*******"
+                    required/>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+            <p id="result"></p>
+        </form>
+    </div>
+    <script>
+        function clickHandler(e) {
+            e.preventDefault()
+            const password = document.getElementById("password").value;
+            const token = window.location.href.split('=')[1]
+            fetch('http://localhost:3000/reset-password', {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    password: password,
+                    token: token
+                })
+            }).then(responce => responce.json()).then(data => {
+                console.log("response==>", data);
+                document.getElementById('result').innerText = data.message
+            }).catch((err) => {
+                document.getElementById('result').innerText = err
+            })
+        }
+    </script>
+</body>
+
+</html>
